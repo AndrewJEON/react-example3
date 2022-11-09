@@ -51,9 +51,9 @@ const AddUser = (props) => {
   };
 
   return (
-		<div>
-      {error && <ErrorModel title={error.title} message={error.message} onConfirm={errorHandler} />}
-			<Card className={styles.input}>
+		[
+      error && (<ErrorModel key="error-modal" title={error.title} message={error.message} onConfirm={errorHandler} /> ),
+			<Card key="add-component" className={styles.input}>
 				<form onSubmit={addUserHandler}>
 					<label htmlFor='username'>Username</label>
 					<input
@@ -72,7 +72,7 @@ const AddUser = (props) => {
 					<Button type='submit'>Add User</Button>
 				</form>
 			</Card>
-		</div>
+    ]
 	);
 };
 
