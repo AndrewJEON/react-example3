@@ -1,4 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
+import css from './UseEffect.module.css';
+
+import Card from './Card';
 
 function UseEffect() {
 	const [name, setName] = useState('초기 닉네임');
@@ -28,9 +31,9 @@ function UseEffect() {
 		setName('닉네임 변경');
 	};
 	return (
-		<div>
+		<Card className={css.use_effect}>
 			{name} <button onClick={onClick}>변경</button>
-		</div>
+		</Card>
 	);
 }
 
